@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import (UserCreationForm , AuthenticationForm)
 from crispy_forms.layout import Layout , ButtonHolder, Submit
 from crispy_forms.helper import FormHelper
 
@@ -18,3 +18,17 @@ class RegisterationForm(UserCreationForm):
 			)
 		)
 
+class LoginForm(AuthenticationForm):
+	"""docstring for LogInForm"""
+	def __init__(self, *args , **kwargs):
+		super(LogInForm, self).__init__(*args , **kwargs)
+		self.helper = FormHelper()
+		self.helper.layout = Layout(
+			'username',
+			'password',
+			ButtonHolder(
+				Submit ('login', 'Login', css_class = 'btn_primary')
+
+			)
+		)
+		
