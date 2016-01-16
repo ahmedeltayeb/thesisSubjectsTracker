@@ -19,9 +19,9 @@ class RegisterationForm(UserCreationForm):
 		)
 
 class LoginForm(AuthenticationForm):
-	"""docstring for LogInForm"""
+	"""docstring for LoginForm"""
 	def __init__(self, *args , **kwargs):
-		super(LogInForm, self).__init__(*args , **kwargs)
+		super(LoginForm, self).__init__(*args , **kwargs)
 		self.helper = FormHelper()
 		self.helper.layout = Layout(
 			'username',
